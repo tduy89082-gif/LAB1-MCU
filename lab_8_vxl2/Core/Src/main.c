@@ -87,7 +87,6 @@ int main(void)
 
     while (1)
     {
-        /* Bat dan tu 0 den 11 */
         for (int i = 0; i < 12; i++)
         {
             setNumberOnClock(i);
@@ -95,11 +94,9 @@ int main(void)
             HAL_Delay(500);
         }
 
-        /* Luc nay ca 12 LED da sang */
 
         HAL_Delay(2000);
 
-        /* Tat het de bat dau lai */
         clearAllClock();
 
         HAL_Delay(1000);

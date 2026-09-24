@@ -82,14 +82,11 @@ int main(void)
 
     while (1)
     {
-        /* BAT TAT CA 12 LED */
         setAllClock();
 
         HAL_Delay(1000);
 
-        /* Tat tung LED:
-           LED1 -> LED2 -> LED3 -> ... -> LED12
-        */
+
         for (int i = 0; i < 12; i++)
         {
             clearNumberOnClock(i);
@@ -97,7 +94,6 @@ int main(void)
             HAL_Delay(1000);
         }
 
-        /* Khi tat het thi cho 1 giay */
         HAL_Delay(1000);
     }
 }

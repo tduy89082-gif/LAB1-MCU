@@ -105,14 +105,6 @@ int main(void)
 
     MX_GPIO_Init();
 
-    /* -----------------------------------------------------
-       BAT DAU DONG HO:
-       03 gio 10 phut 00 giay
-
-       Gio  = 3  -> LED4
-       Phut = 10 -> LED11
-       Giay = 0  -> LED1
-       ----------------------------------------------------- */
 
     int hour = 3;
     int minute = 10;
@@ -142,33 +134,25 @@ int main(void)
 
         HAL_Delay(1000);
 
-        /* Tat LED giay hien tai */
         clearAllClock();
 
-        /*
-         * Sau khi clearAllClock(), phai bat lai
-         * LED gio va LED phut.
-         */
+
 
         setNumberOnClock(hour);
         setNumberOnClock(minute);
 
-        /* Tang giay */
         second++;
 
-        /* 12 vi tri tren mat dong ho */
         if (second >= 12)
         {
             second = 0;
 
-            /* Sau 12 giay -> tang phut */
             minute++;
 
             if (minute >= 12)
             {
                 minute = 0;
 
-                /* Sau 12 phut -> tang gio */
                 hour++;
 
                 if (hour >= 12)
@@ -178,7 +162,6 @@ int main(void)
             }
         }
 
-        /* Bat LED giay moi */
         setNumberOnClock(second);
     }
 }
